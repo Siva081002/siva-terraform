@@ -40,9 +40,10 @@ resource "aws_instance" "my_ec2" {
   instance_type = "t2.micro"
   key_name      = "shiva" # Use your existing key-pair name
 
-  vpc_security_group_ids = ["sg-0bbc96c188a1c090a"]
+  vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
   tags = {
     Name = "Siva-terraform"
   }
+
 }
